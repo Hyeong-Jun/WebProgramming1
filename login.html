@@ -1,8 +1,58 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>로그인</title>
-    </head>
-    <body>
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Cute+Font|Do+Hyeon|Nanum+Brush+Script|Nanum+Pen+Script" rel="stylesheet">
+    <title>로그인</title>
+    <style>
+        h1 {
+            font-family: 'Nanum Pen Script', cursive;
+        }
+        
+    </style>
+    <script>
+        function Check() {
+            if (document.login.id.value.length < 1) {
+                alert("id를 입력하세요.");
+                document.login.id.focus();
+                return;
+            }
 
-    </body>
+            if (document.login.pwd.value.length < 1) {
+                alert("비밀번호를 입력하세요.");
+                document.login.pwd.focus();
+                return;
+            }
+            document.login.submit();
+        }
+        function goMemberRegister() {
+            location.href = "member_form.html";
+        }
+    </script>
+</head>
+
+<body onload='document.login.id.focus()'>
+    <center>
+        <h1> 로그인 </h1>
+        <Form name="login" action="index.html" method="get">
+            <table>
+                <tr>
+                    <td>ID</td>
+                    <td colspan="2"><input type="text" name="id"></td>
+                </tr>
+                <tr>
+                    <td>PW</td>
+                    <td colspan="2"><input type="password" name="pwd"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="로그인" onclick="Check()"></td>
+                    <td><input type="Reset" value="초기화"></td>
+                    <td style="text-align: center">
+                        <input type="button" value="회원가입" onclick="goMemberRegister()">
+                    </td>
+                </tr>
+            </table>
+        </Form>
+    </center>
+</body>
 </html>
