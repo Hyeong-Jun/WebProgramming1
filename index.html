@@ -12,6 +12,17 @@
 
     <!-- defer?? -->
     <script type="text/javascript" defer src="main.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async id="ga-script" src="https://www.googletagmanager.com/gtag/js?id=G-GNK06KBWVZ"></script>
+    <script>
+        const trackingId = TRACKING_ID;
+        console.log(`trackingId: ${trackingId}`);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-GNK06KBWVZ');
+    </script>
 </head>
 
 <body>
